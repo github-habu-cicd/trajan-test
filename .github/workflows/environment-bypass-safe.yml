@@ -1,0 +1,16 @@
+name: Environment Bypass - Safe
+on:
+  push:
+
+jobs:
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          echo "Building application"
+          echo "This is not a deployment job"
