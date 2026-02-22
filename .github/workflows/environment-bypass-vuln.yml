@@ -1,0 +1,17 @@
+name: Environment Bypass - Vulnerable
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy application
+        run: |
+          echo "Deploying to production server"
+          echo "No environment protection configured!"
