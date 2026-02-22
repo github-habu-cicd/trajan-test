@@ -1,0 +1,13 @@
+name: Composite Action Risk - Safe
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use regular action
+        uses: actions/checkout@v4
+
+      - name: Run safe command
+        run: echo "This is a safe workflow"
