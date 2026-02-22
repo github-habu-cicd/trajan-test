@@ -1,0 +1,16 @@
+name: Known Vulnerable Actions - Safe
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use latest checkout
+        uses: actions/checkout@v4
+
+      - name: Use latest upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-artifact
+          path: .
