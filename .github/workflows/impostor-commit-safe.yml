@@ -1,0 +1,13 @@
+name: Impostor Commit - Safe
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout with official action
+        uses: actions/checkout@v4
+
+      - name: Setup Node with tag
+        uses: actions/setup-node@v4
