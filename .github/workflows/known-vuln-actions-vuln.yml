@@ -1,0 +1,19 @@
+name: Known Vulnerable Actions - Vulnerable
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use vulnerable checkout v1
+        uses: actions/checkout@v1
+
+      - name: Use vulnerable upload-artifact v2
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-artifact
+          path: .
+
+      - name: Use compromised action
+        uses: tj-actions/changed-files@v1
