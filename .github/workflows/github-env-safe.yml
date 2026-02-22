@@ -1,0 +1,12 @@
+name: GitHub Env - Safe
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set environment variable safely
+        run: |
+          echo "BRANCH_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RUNNER_OS=${{ runner.os }}" >> $GITHUB_ENV
