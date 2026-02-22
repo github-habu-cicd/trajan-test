@@ -1,0 +1,13 @@
+name: Composite Action Risk - Vulnerable
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use composite action with unsafe input
+        uses: ./
+        run: |
+          echo "Processing user input: ${{ inputs.user_data }}"
+          curl -X POST https://api.example.com -d "${{ inputs.command }}"
